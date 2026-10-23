@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ATS Resume Checker
 
-## Getting Started
+A free AI-powered resume checker that compares a resume against a job description and provides ATS-style insights.
 
-First, run the development server:
+**No signup. No account. No paywall.**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What It Does
+
+ATS Resume Checker helps job seekers and recruiters quickly understand how well a resume aligns with a specific job description.
+
+It analyzes:
+
+- Skills and technical requirements
+- Relevant keywords
+- Experience requirements
+- Education requirements
+- Resume structure
+- Matched and partially matched skills
+- Missing requirements
+- Resume improvement opportunities
+
+The application also generates an overall ATS-style compatibility score based on the analysis.
+
+## How It Works
+
+```text
+Resume
+   +
+Job Description
+   ↓
+PDF Text Extraction
+   ↓
+AI Analysis
+   ↓
+Requirement Matching
+   ↓
+Deterministic ATS Scoring
+   ↓
+Resume Insights
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+AI is used to understand the resume and job requirements, while the final scoring is calculated separately using TypeScript logic.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Groq
+- GPT-OSS 120B
+- pdf-parse
+- Vercel
 
-## Learn More
+## Scoring Model
 
-To learn more about Next.js, take a look at the following resources:
+The ATS-style score is calculated using five categories:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Category | Weight |
+|---|---:|
+| Skills | 30% |
+| Keywords | 25% |
+| Experience | 20% |
+| Education | 10% |
+| Structure | 15% |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The score is designed as a practical comparison between a resume and a job description. It is **not an official score from any specific ATS platform**.
 
-## Deploy on Vercel
+## Design Principles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Free by default
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application is designed to remain accessible without requiring an account, subscription, or payment.
+
+### AI-assisted, not AI-dependent
+
+AI handles the interpretation of resumes and job requirements, while deterministic TypeScript logic handles the final scoring.
+
+### Honest recommendations
+
+The analyzer does not encourage users to fabricate qualifications. Missing skills are presented as missing requirements, not instructions to falsely add them to a resume.
+
+### Simple workflow
+
+The goal is to make resume analysis straightforward:
+
+**Upload → Analyze → Understand → Improve**
+
+## Project
+
+Built as an independent web application exploring AI-assisted resume analysis, ATS scoring, and practical UX for job seekers and recruiters.
+
+## Author
+
+**John Bryan Vergara**
+
+[Portfolio](https://johnbryanvergara.vercel.app) · [GitHub](https://github.com/JB-VERGARA)
