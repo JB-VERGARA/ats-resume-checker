@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://ats-resume-checker.vercel.app";
+const siteUrl = "https://ats-resume-checker-jbv.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
