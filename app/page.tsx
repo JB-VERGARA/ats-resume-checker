@@ -296,7 +296,6 @@ export default function Home() {
             <span>✓ Free for job seekers</span>
             <span>✓ Free for recruiters</span>
             <span>✓ No account required</span>
-            <span>✓ No paywall bullshit</span>
           </div>
         </div>
       </section>
